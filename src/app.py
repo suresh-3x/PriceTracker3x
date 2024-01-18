@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
 
     # Add products to the PriceTracker
-    price_tracker.load_products_from_json('./products.json')
+    price_tracker.load_products_from_json('src/products.json')
 
     # Start tracking prices
     price_tracker.track_prices()
