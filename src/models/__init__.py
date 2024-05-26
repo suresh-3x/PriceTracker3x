@@ -1,15 +1,18 @@
-from dataclasses import dataclass
+import time
+from dataclasses import dataclass, field
+
 import requests
 from bs4 import BeautifulSoup
-from dataclasses import dataclass, field
-import time
-from scrapers import AmazonScraper,  FlipkartScraper, CromaScraper
+
+from scrapers import AmazonScraper, CromaScraper, FlipkartScraper
+
 
 @dataclass
 class Specifications:
     color: str
     size: str
     # Add more specifications as needed
+
 
 @dataclass
 class Site:
@@ -27,9 +30,9 @@ class Site:
         else:
             raise ValueError(f"Unsupported site: {self.name}")
 
+
 @dataclass
 class Product:
     name: str
     specifications: Specifications
     sites: list[Site]
-
